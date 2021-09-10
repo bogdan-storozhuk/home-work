@@ -1,23 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+
+import helloWorld from "./components/helloWorld";
+import Counter from "./components/counter";
+import SearchForm from "./components/searchForm";
+import GenreToggle from "./components/genreToggle";
 
 function App() {
+  const genreList = [
+    { id: 0, name: "ALL" },
+    { id: 1, name: "DOCUMENTARY" },
+    { id: 2, name: "COMEDY" },
+    { id: 3, name: "HORROR" },
+    { id: 4, name: "CRIME" },
+  ];
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {helloWorld}
+      <Counter />
+      <SearchForm />
+      <GenreToggle genreList={genreList} />
     </div>
   );
 }
